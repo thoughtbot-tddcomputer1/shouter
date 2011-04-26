@@ -3,7 +3,10 @@
  
   <% @shouts.each do |shout| %>
     <li>
-      <%= shout.body %>
+      <%= auto_link html_escape(shout.body) %>
+         <span class="time">
+           <%= time_ago_in_words shout.created_at,include_seconds=true %>
+         <span>
     </li>
   <% end %>
  

@@ -1,5 +1,5 @@
 Shouter::Application.routes.draw do
- resources :shouts, :only => [:new, :create, :index]
+ resources :shouts, :only => [:new, :create, :index, :delete]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -50,7 +50,7 @@ Shouter::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+ root :to => "shouts#index"
 
   # See how all your routes lay out with "rake routes"
 

@@ -12,8 +12,15 @@ class ShoutsController < ApplicationController
 
   def create
     @shout = Shout.new(params[:shout])
-    @shout.save 
-    redirect_to shouts_path, :notice => "Shout Accepted"
+    if @shout.save 
+      flash[:success] = "Shout Created"
+    else 
+      flash[:failure] = "Shout not created"
+    end
+     
+#    @shout.save 
+   redirect_to shouts_path
+   # :notice => "Shout Accepted"
   end
   
 end
