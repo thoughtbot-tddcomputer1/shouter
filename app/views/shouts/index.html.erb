@@ -1,10 +1,20 @@
 <h1>SHOUTS!</h1>
 <ul>
  
-  <% @hamburger.each do |shout| %>
+  <% @shouts.each do |shout| %>
     <li>
       <%= shout.body %>
     </li>
   <% end %>
  
  </ul>
+ 
+ 
+ <div class="form">
+
+<%= form_for @shout do |form| %>
+  <%= form.text_field :body %>
+  <%= form.submit %>
+<% end %>
+
+</div>

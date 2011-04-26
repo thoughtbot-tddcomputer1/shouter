@@ -1,7 +1,9 @@
 class ShoutsController < ApplicationController
   
   def index 
-    @hamburger = Shout.all 
+    @shouts = Shout.top5 
+    @shout = Shout.new
+    
   end
   
   def new
